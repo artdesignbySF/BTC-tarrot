@@ -9,7 +9,7 @@
 *Anyone can join! Read the Dimensions! Read the Card-list! Be aware that there will be templates available for Adobe Photoshop and Indesign!
 Please let @_bitcoinwords or @artdesignbySF on twitter know which card you will be illustrating and we will add your name to the cardlist below so other people know it is taken!*
 
-***EXPORT YOUR ILLUSTRATIONS TO CMYK AND 300 DPI!!***
+***EXPORT YOUR ILLUSTRATIONS TO RGB AND 300 DPI!!*** *(@artdesignbySF will convert to CMYK if/when prints are made)* 
 
 **Suggestions:**
 I suggest icons for the four suits should be made to look alike on all cards of the same suit and will be added on top. This should be a priority job so illustrators know what a suit looks like and where the icon will be placed on a card.
