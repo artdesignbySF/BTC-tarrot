@@ -47,7 +47,7 @@ I suggest icons for the four suits should be made to look alike on all cards of 
 * X		Wheel of Fortune
 * XI	Justice
 * XII	The Hanged Man
-* XIII	Death
+* XIII	Death (@artdesignbySF)
 * XI	Temperance
 * XV	The Devil
 * XVI	The Tower
