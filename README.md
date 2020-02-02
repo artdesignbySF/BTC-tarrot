@@ -34,39 +34,36 @@ I suggest icons for the four suits should be made to look alike on all cards of 
 **CARD-LIST:**
 
  **Deck contents, Major Arcana (22 cards):**
-<li>
-  0.      The Fool
-  I.      The Magician
-  II.     The High Priestess
-  III.    The Empress
-  IV.     The Emperor
-  V.      The Hierophant
-  VI.     The Lovers
-  VII.    The Chariot
-  VIII.   Strength
-  IX.     The Hermit
-  X.      Wheel of Fortune
-  XI.     Justice
-  XII.    The Hanged Man
-  XIII.   Death
-  XIV.    Temperance
-  XV.     The Devil
-  XVI.    The Tower
-  XVII    The Star
-  XVIII.  The Moon
-  XIX.    The Sun
-  XX.     Judgement
-  XXI.    The World
-</li>
+* 0.		The Fool
+* I.		The Magician
+* II.		The High Priestess
+* III.		The Empress
+* IV.		The Emperor
+* V.		The Hierophant
+* VI.		The Lovers
+* VII.		The Chariot
+* VIII.		Strength
+* IX.		The Hermit
+* X.		Wheel of Fortune
+* XI.		Justice
+* XII.		The Hanged Man
+* XIII.		Death
+* XIV.		Temperance
+* XV.*		The Devil
+* XVI.		The Tower
+* XVII		The Star
+* XVIII.	The Moon
+* XIX.		The Sun
+* XX.		Judgement
+
 Deck Contents, Minor Arcana (56 cards):
-<li>
-1.  Ace of Wands
-2.  Two of Wands
-3.  Three of Wands
-4.  Four of Wands
-5.  Five of Wands
-6.  Six of Wands
-7.  Seven of Wands
+1. Ace of Wands
+2. Two of Wands
+3. Three of Wands
+4. Four of Wands
+5. Five of Wands
+6. Six of Wands
+7. Seven of Wands
 8.  Eight of Wands
 9.  Nine of Wands
 10. Ten of Wands
@@ -116,4 +113,3 @@ Deck Contents, Minor Arcana (56 cards):
 54. Knight of Cups
 55. Queen of Cups
 56. King of Cups
-</li>
