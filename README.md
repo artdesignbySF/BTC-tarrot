@@ -34,7 +34,7 @@ I suggest icons for the four suits should be made to look alike on all cards of 
 **CARD-LIST:**
 
  **Deck contents, Major Arcana (22 cards):**
- <p>
+<li>
   0.      The Fool
   I.      The Magician
   II.     The High Priestess
@@ -57,8 +57,9 @@ I suggest icons for the four suits should be made to look alike on all cards of 
   XIX.    The Sun
   XX.     Judgement
   XXI.    The World
-</p>
+</li>
 Deck Contents, Minor Arcana (56 cards):
+<li>
 1.  Ace of Wands
 2.  Two of Wands
 3.  Three of Wands
@@ -115,4 +116,4 @@ Deck Contents, Minor Arcana (56 cards):
 54. Knight of Cups
 55. Queen of Cups
 56. King of Cups
-
+</li>
