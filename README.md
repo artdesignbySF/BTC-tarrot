@@ -34,6 +34,7 @@ I suggest icons for the four suits should be made to look alike on all cards of 
 **CARD-LIST:**
 
  **Deck contents, Major Arcana (22 cards):**
+ 
 * 0.		The Fool
 * I.		The Magician
 * II.		The High Priestess
@@ -57,6 +58,7 @@ I suggest icons for the four suits should be made to look alike on all cards of 
 * XX.		Judgement
 
 Deck Contents, Minor Arcana (56 cards):
+
 1. Ace of Wands
 2. Two of Wands
 3. Three of Wands
