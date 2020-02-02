@@ -16,7 +16,7 @@ I suggest icons for the four suits should be made to look alike on all cards of 
 
 **Dimensions:**
 - Card Dimensions: 70 * 120 mm / 2.7559 * 4.7244 in
-- Illustration dimensions: 55,6 * 94,8 mm / 2.1889 * 3.7323
+- Illustration dimensions: 55,6 * 94,8 mm / 2.1889 * 3.7323 in
 - Marin top: 14,4 mm / 0.5669 in
 - Margin Bottem: 10,8 mm / 0.4252 in
 - Margin left and right: 7,2 mm / 0.2835 in
