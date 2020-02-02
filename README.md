@@ -34,6 +34,7 @@ Additional notes:
 CARD-LIST:
 
  Deck contents, Major Arcana (22 cards):
+ 
   0.      The Fool
   I.      The Magician
   II.     The High Priestess
