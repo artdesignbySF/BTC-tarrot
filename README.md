@@ -33,31 +33,30 @@ I suggest icons for the four suits should be made to look alike on all cards of 
 
 **CARD-LIST:**
 
- **Deck contents, Major Arcana (22 cards):**
-<ol>
-* 0.		The Fool
-* I.		The Magician
-* II.		The High Priestess
-* III.		The Empress
-* IV.		The Emperor
-* V.		The Hierophant
-* VI.		The Lovers
-* VII.		The Chariot
-* VIII.		Strength
-* IX.		The Hermit
-* X.		Wheel of Fortune
-* XI.		Justice
-* XII.		The Hanged Man
-* XIII.		Death
-* XIV.		Temperance
-* XV.*		The Devil
-* XVI.		The Tower
-* XVII		The Star
-* XVIII.	The Moon
-* XIX.		The Sun
-* XX.		Judgement
-</ol>
-Deck Contents, Minor Arcana (56 cards):
+ ***Deck contents, Major Arcana (22 cards):***
+* 0		The Fool
+* I		The Magician
+* II	The High Priestess
+* III	The Empress
+* IV	The Emperor
+* V		The Hierophant
+* VI	The Lovers
+* VII	The Chariot
+* VIII	Strength
+* IX	The Hermit
+* X		Wheel of Fortune
+* XI	Justice
+* XII	The Hanged Man
+* XIII	Death
+* XI	Temperance
+* XV	The Devil
+* XVI	The Tower
+* XVI	The Star
+* XVIII	The Moon
+* XIX	The Sun
+* XX	Judgement
+
+***Deck Contents, Minor Arcana (56 cards):***
 
 1. Ace of Wands
 2. Two of Wands
