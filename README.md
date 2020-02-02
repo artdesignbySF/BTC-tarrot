@@ -1,40 +1,40 @@
-# BTC-tarrot
-Open source Bitcoin Tarot deck.
+**# BTC-tarrot**
+*Open source Bitcoin Tarot deck.*
 
-Format, Rider-Waite tarot deck (https://en.m.wikipedia.org/wiki/Rider-Waite_tarot_deck): 
+**Format, Rider-Waite tarot deck (https://en.m.wikipedia.org/wiki/Rider-Waite_tarot_deck):**
 - 78 Tarrot Cards
 
 
-IMPORTANT INFORMATION:
-Anyone can join! Read the Dimensions! Read the Card-list! Be aware that there will be templates available for Adobe Photoshop and Indesign!
-Please let @_bitcoinwords or @artdesignbySF on twitter know which card you will be illustrating and we will add your name to the cardlist below so other people know it is taken!
+**IMPORTANT INFORMATION:**
+*Anyone can join! Read the Dimensions! Read the Card-list! Be aware that there will be templates available for Adobe Photoshop and Indesign!
+Please let @_bitcoinwords or @artdesignbySF on twitter know which card you will be illustrating and we will add your name to the cardlist below so other people know it is taken!*
 
-EXPORT YOUR ILLUSTRATIONS TO CMYK AND 300 DPI!!
+***EXPORT YOUR ILLUSTRATIONS TO CMYK AND 300 DPI!!***
 
-Suggestions:
+**Suggestions:**
 I suggest icons for the four suits should be made to look alike on all cards of the same suit and will be added on top. This should be a priority job so illustrators know what a suit looks like and where the icon will be placed on a card.
 
-Dimensions:
+**Dimensions:**
 - Card Dimensions: 70 * 120 mm / 2.7559 * 4.7244 in
 - Illustration dimensions: 55,6 * 94,8 mm / 2.1889 * 3.7323
 - Marin top: 14,4 mm / 0.5669 in
 - Margin Bottem: 10,8 mm / 0.4252 in
 - Margin left and right: 7,2 mm / 0.2835 in
 
-Numbering & naming of cards:
+**Numbering & naming of cards** *(This will be done by @artdesignbySF):*
 - Font used: Alata Regular
 - Size: 14,4 pt
 - Linespace: 18 pt
 - Format: All Caps
 
-Additional notes:
+**Additional notes:**
 - Margin should remain blank. Within margin, go nuts!
 
 
-CARD-LIST:
+**CARD-LIST:**
 
- Deck contents, Major Arcana (22 cards):
- 
+ **Deck contents, Major Arcana (22 cards):**
+ <p>
   0.      The Fool
   I.      The Magician
   II.     The High Priestess
@@ -57,7 +57,7 @@ CARD-LIST:
   XIX.    The Sun
   XX.     Judgement
   XXI.    The World
-
+</p>
 Deck Contents, Minor Arcana (56 cards):
 1.  Ace of Wands
 2.  Two of Wands
