@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.fortune-teller {
+    width: 80%;
+    max-width: 600px;
+}
+
+.fortune-teller-machine {
+    background-color: #333;
+    border: 2px solid #555;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.screen {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
+#card-display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#card-display img {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid #777;
+    border-radius: 5px;
+}
+
+#fortune-text {
+    text-align: center;
+    font-style: italic;
+}
+
+.payment-section {
+    text-align: center;
+}
+
+#play-button, #claim-button {
+    background-color: #665;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#play-button:hover, #claim-button:hover {
+    background-color: #887;
+}
+
+#invoice-input {
+    padding: 8px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+#payment-status, #claim-status {
+    color: #ff6;
+    margin-top: 10px;
+}
