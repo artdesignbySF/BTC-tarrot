@@ -9,7 +9,7 @@ This document outlines the development plan for the BTC Tarot project, detailing
 - [Card Concepts](#card-concepts)
   - [Introduction](#introduction)
   - [Card Concepts](#card-concepts-1)
-    - [0. The Fool](#0-the-fool)
+    - [00. The Fool](#00-the-fool)
     - [I. The Magician](#i-the-magician)
     - [II. The High Priestess](#ii-the-high-priestess)
     - [III. The Empress](#iii-the-empress)
@@ -24,7 +24,13 @@ This document outlines the development plan for the BTC Tarot project, detailing
     - [XII. The Hanged Man](#xii-the-hanged-man)
     - [XIII. Death](#xiii-death)
     - [XIV. Temperance](#xiv-temperance)
-    - [To be continued](#to-be-continued)
+    - [XV. The Tower](#xv-the-tower)
+    - [XVI. The Star](#xvi-the-star)
+    - [XVII. The Moon](#xvii-the-moon)
+    - [XVIII. The Sun](#xviii-the-sun)
+    - [XIX. Judgment](#xix-judgment)
+    - [XX. The World](#xx-the-world)
+    - [XXI. Ace of Pentacles](#xxi-ace-of-pentacles)
 
 ## Project Development Steps
 
@@ -61,6 +67,11 @@ This document outlines the development plan for the BTC Tarot project, detailing
     * Sub-milestone 1.2: Completed.
     * Sub-milestone 1.3: In Progress.
     * Sub-milestone 1.4: Pending.
+* **Card Designs:**
+    * Designs for cards 00 through 13 are roughly complete.
+    * The design for card 21 is also roughly complete.
+    * Designs for cards 14-20 are still pending.
+    * All cards require transparency and resizing for web use.
 
 ---
 
@@ -76,7 +87,7 @@ This project aims to create a unique Tarot card experience, blending classic med
 
 # Card Concepts
 
-### 0. The Fool
+### 00. The Fool
 
 **Visual:** An androgynous figure stands at the edge of a precipice, seemingly oblivious to the danger. They wear tattered, dark clothing with subtle circuit board patterns. A small, glowing Bitcoin symbol is attached to their back like a backpack. The background is a swirling vortex of dark colors, with faint lightning bolt patterns.
 
@@ -244,10 +255,8 @@ This project aims to create a unique Tarot card experience, blending classic med
 
 ---
 
-### Ace of Pentacles
+### XXI. Ace of Pentacles
 
 **Visual:** A large coin or pentacle is held in a hand, surrounded by lush vegetation and symbols of abundance. The coin is designed to resemble a physical Bitcoin, with intricate details and a glowing center.
 
 **Bitcoin/Lightning Theme:** The Ace of Pentacles represents new beginnings, material wealth, and prosperity, which can be linked to the potential for financial gain and economic empowerment in the cryptocurrency space.
-
----
