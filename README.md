@@ -2,6 +2,30 @@
 
 This document outlines the development plan for the BTC Tarot project, detailing the key milestones and sub-milestones.
 
+## Table of Contents
+
+- [Project Development Steps](#project-development-steps)
+- [Current Progress](#current-progress)
+- [Card Concepts](#card-concepts)
+  - [Introduction](#introduction)
+  - [Card Concepts](#card-concepts-1)
+    - [0. The Fool](#0-the-fool)
+    - [I. The Magician](#i-the-magician)
+    - [II. The High Priestess](#ii-the-high-priestess)
+    - [III. The Empress](#iii-the-empress)
+    - [IV. The Emperor](#iv-the-emperor)
+    - [V. The Hierophant](#v-the-hierophant)
+    - [VI. The Lovers](#vi-the-lovers)
+    - [VII. The Chariot](#vii-the-chariot)
+    - [VIII. Strength](#viii-strength)
+    - [IX. The Hermit](#ix-the-hermit)
+    - [X. Wheel of Fortune](#x-wheel-of-fortune)
+    - [XI. Justice](#xi-justice)
+    - [XII. The Hanged Man](#xii-the-hanged-man)
+    - [XIII. Death](#xiii-death)
+    - [XIV. Temperance](#xiv-temperance)
+    - [To be continued](#to-be-continued)
+
 ## Project Development Steps
 
 1.  **Card Concept Descriptions:**
@@ -104,7 +128,7 @@ This project aims to create a unique Tarot card experience, blending classic med
 
 **Visual:** Two figures stand facing each other, surrounded by a swirling vortex of energy. They are connected by a beam of light that emanates from a Bitcoin symbol in the center.
 
-**Bitcoin/Lightning Theme:** The Lovers represent choices, partnerships, and harmony, which can be associated with the collaboration and community aspects of the blockchain space.
+**Bitcoin/Lightning Theme:** The Lovers represents choices, partnerships, and harmony, which can be associated with the collaboration and community aspects of the blockchain space.
 
 ---
 
@@ -171,5 +195,7 @@ This project aims to create a unique Tarot card experience, blending classic med
 **Bitcoin/Lightning Theme:** Temperance represents balance, moderation, and patience, which can be associated with the need for a measured approach to cryptocurrency investment and development.
 
 ---
+
+### To be continued
 
 **(To be continued with the remaining card concepts...)**
