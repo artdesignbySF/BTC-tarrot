@@ -74,11 +74,11 @@ This project aims to create a unique Tarot card experience, blending classic med
 
 ---
 
-## Card Concepts
+# Card Concepts
 
 ### 0. The Fool
 
-**Visual:** A figure, perhaps androgynous, stands at the edge of a precipice, seemingly oblivious to the danger. They wear tattered, dark clothing with subtle circuit board patterns. A small, glowing Bitcoin symbol is attached to their back like a backpack. The background is a swirling vortex of dark colors, with faint lightning bolt patterns.
+**Visual:** An androgynous figure stands at the edge of a precipice, seemingly oblivious to the danger. They wear tattered, dark clothing with subtle circuit board patterns. A small, glowing Bitcoin symbol is attached to their back like a backpack. The background is a swirling vortex of dark colors, with faint lightning bolt patterns.
 
 **Bitcoin/Lightning Theme:** The Fool represents taking risks and embracing the unknown, which can be related to the volatile nature of cryptocurrency.
 
@@ -86,7 +86,7 @@ This project aims to create a unique Tarot card experience, blending classic med
 
 ### I. The Magician
 
-**Visual:** A figure with intense, glowing eyes stands behind a table covered in arcane symbols and tools. One hand holds a wand that emits a beam of light, while the other points downwards, grounding the energy. The table is adorned with a Lightning Network node symbol.
+**Visual:** A figure with intense, glowing eyes stands behind a table covered in arcane symbols and tools. One hand holds a wand that emits a beam of light, while the other points downwards, grounding the energy. The table is adorned with a prominent Lightning Network node symbol.
 
 **Bitcoin/Lightning Theme:** The Magician represents skill, resourcefulness, and the ability to manifest one's desires, which can be linked to the potential of blockchain technology.
 
@@ -134,7 +134,7 @@ This project aims to create a unique Tarot card experience, blending classic med
 
 ### VII. The Chariot
 
-**Visual:** A powerful figure stands in a chariot, pulled by two creatures. The chariot is adorned with circuit patterns and Bitcoin symbols. The figure holds a scepter that emits a beam of light.
+**Visual:** A powerful figure stands in a chariot, pulled by two creatures. The chariot is adorned with circuit patterns and Bitcoin symbols. The figure holds a scepter that emits a focused beam of light.
 
 **Bitcoin/Lightning Theme:** The Chariot represents willpower, control, and determination, which can be linked to the drive and ambition within the cryptocurrency space.
 
@@ -196,6 +196,58 @@ This project aims to create a unique Tarot card experience, blending classic med
 
 ---
 
-### To be continued
+### XV. The Tower
 
-**(To be continued with the remaining card concepts...)**
+**Visual:** A tall tower is struck by lightning, crumbling and collapsing. Figures are seen falling from the tower. The tower is constructed from dark, metallic materials, with visible circuit board patterns and glowing Lightning Network nodes.
+
+**Bitcoin/Lightning Theme:** The Tower represents sudden change, upheaval, and the destruction of old structures, which can be linked to the disruptive potential of blockchain technology and the volatility of the cryptocurrency market.
+
+---
+
+### XVI. The Star
+
+**Visual:** A figure kneels by a pool of water, pouring out liquid from two vessels. Stars shine brightly in the dark sky. The figure's clothing incorporates subtle Lightning Network patterns, and the stars in the sky are arranged in patterns resembling Bitcoin network nodes.
+
+**Bitcoin/Lightning Theme:** The Star represents hope, inspiration, and renewal, which can be associated with the optimism and potential of the blockchain space.
+
+---
+
+### XVII. The Moon
+
+**Visual:** A dark, mysterious landscape with a large moon in the sky. Two towers stand in the distance, and a path leads into the darkness. The moon's light reveals subtle Bitcoin symbols hidden in the shadows.
+
+**Bitcoin/Lightning Theme:** The Moon represents intuition, fear, and the subconscious, which can be linked to the uncertainty and hidden potential of the cryptocurrency market.
+
+---
+
+### XVIII. The Sun
+
+**Visual:** A bright, radiant sun shines down on a joyful scene. Figures dance and celebrate in a lush, vibrant landscape. The sun itself is depicted as a large, glowing Bitcoin symbol, radiating light and energy.
+
+**Bitcoin/Lightning Theme:** The Sun represents joy, success, and vitality, which can be associated with the potential for wealth generation and positive impact in the blockchain space.
+
+---
+
+### XIX. Judgment
+
+**Visual:** Figures rise from their graves, summoned by a trumpet-blowing angel. The angel's trumpet emits a beam of light that forms a Lightning Network connection in the sky.
+
+**Bitcoin/Lightning Theme:** Judgment represents awakening, rebirth, and transformation, which can be linked to the disruptive and transformative nature of blockchain technology.
+
+---
+
+### XX. The World
+
+**Visual:** A figure dances within a wreath, surrounded by symbols of the four elements. The wreath is composed of interconnected Lightning Network nodes, forming a global network.
+
+**Bitcoin/Lightning Theme:** The World represents completion, fulfillment, and global connection, which can be associated with the potential for blockchain technology to create a more interconnected and equitable world.
+
+---
+
+### Ace of Pentacles
+
+**Visual:** A large coin or pentacle is held in a hand, surrounded by lush vegetation and symbols of abundance. The coin is designed to resemble a physical Bitcoin, with intricate details and a glowing center.
+
+**Bitcoin/Lightning Theme:** The Ace of Pentacles represents new beginnings, material wealth, and prosperity, which can be linked to the potential for financial gain and economic empowerment in the cryptocurrency space.
+
+---
