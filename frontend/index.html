@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC Tarot Fortune Teller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="fortune-teller">
+        <div class="fortune-teller-machine">
+            <div class="screen">
+                <div id="card-display">
+                    </div>
+                <div id="fortune-text">
+                    </div>
+            </div>
+            <div class="payment-section">
+                <button id="play-button">Play (21 sats)</button>
+                <div id="payment-status"></div>
+                <div id="jackpot-claim" style="display: none;">
+                    <input type="text" id="invoice-input" placeholder="Lightning Invoice or Address">
+                    <button id="claim-button">Claim Jackpot</button>
+                    <div id="claim-status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
