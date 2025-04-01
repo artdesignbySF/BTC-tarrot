@@ -2,6 +2,14 @@
 
 This document outlines the development plan for the BTC Tarot project, detailing the key milestones and sub-milestones.
 
+### Goal
+
+Make a website that shows an oldy-time fortune telling machine. Once the visiter of the site has paid 21 sats, the machine spins to life and draws three cards from a tarot deck. Depending on the combination of cards, a bitcoin/lightning themed fortune will be told to the enduser by the machine. 
+
+Everytime a user pays, 14 of the 7 sats go into the jackpot. If the player is lucky and receives the most favorable/lucky hand, it may withdraw the jackpot to their lightning address, lnurl or via lightning invoice. 
+
+
+
 ## Table of Contents
 
 - [Project Development Steps](#project-development-steps)
@@ -59,6 +67,9 @@ This document outlines the development plan for the BTC Tarot project, detailing
     * **Sub-milestone 4.2:** Fortune ideas for the next 8 Major Arc-ana cards.
     * **Sub-milestone 4.3:** Fortune ideas for the final 7 Major Arcana cards.
     * **Sub-milestone 4.4:** Review and refinement of all 22 card fortune ideas.
+
+5.  **Fortune Ideas:**
+    * **Sub-milestone 5.1:** For each combination of possible hands a short and consise fortune must be written, each involving a bitcoin theme. 
 
 ## Current Progress
 
