@@ -1,273 +1,249 @@
-# BTC Tarot - Project Development Plan
+# Madame Satoshi's Bitcoin Tarot Automaton
 
-This document outlines the development plan for the BTC Tarot project, detailing the key milestones and sub-milestones.
+🔮 A web-based simulation of a vintage fortune-telling automaton providing Bitcoin-themed Tarot readings via the Lightning Network.
 
-### Goal
-
-Make a website that shows an oldy-time fortune telling machine. Once the visiter of the site has paid 21 sats, the machine spins to life and draws three cards from a tarot deck. Depending on the combination of cards, a bitcoin/lightning themed fortune will be told to the enduser by the machine. 
-
-Everytime a user pays, 14 of the 7 sats go into the jackpot. If the player is lucky and receives the most favorable/lucky hand, it may withdraw the jackpot to their lightning address, lnurl or via lightning invoice. 
-
-
+---
 
 ## Table of Contents
 
-- [Project Development Steps](#project-development-steps)
-- [Current Progress](#current-progress)
-- [Card Concepts](#card-concepts)
-  - [Introduction](#introduction)
-  - [Card Concepts](#card-concepts-1)
-    - [00. The Fool](#00-the-fool)
-    - [I. The Magician](#i-the-magician)
-    - [II. The High Priestess](#ii-the-high-priestess)
-    - [III. The Empress](#iii-the-empress)
-    - [IV. The Emperor](#iv-the-emperor)
-    - [V. The Hierophant](#v-the-hierophant)
-    - [VI. The Lovers](#vi-the-lovers)
-    - [VII. The Chariot](#vii-the-chariot)
-    - [VIII. Strength](#viii-strength)
-    - [IX. The Hermit](#ix-the-hermit)
-    - [X. Wheel of Fortune](#x-wheel-of-fortune)
-    - [XI. Justice](#xi-justice)
-    - [XII. The Hanged Man](#xii-the-hanged-man)
-    - [XIII. Death](#xiii-death)
-    - [XIV. Temperance](#xiv-temperance)
-    - [XV. The Tower](#xv-the-tower)
-    - [XVI. The Star](#xvi-the-star)
-    - [XVII. The Moon](#xvii-the-moon)
-    - [XVIII. The Sun](#xviii-the-sun)
-    - [XIX. Judgment](#xix-judgment)
-    - [XX. The World](#xx-the-world)
-    - [XXI. Ace of Pentacles](#xxi-ace-of-pentacles)
-
-## Project Development Steps
-
-1.  **Card Concept Descriptions:**
-    * **Sub-milestone 1.1:** Completion of concept descriptions for the first 7 Major Arcana cards.
-    * **Sub-milestone 1.2:** Completion of concept descriptions for the next 8 Major Arcana cards.
-    * **Sub-milestone 1.3:** Completion of concept descriptions for the final 7 Major Arcana cards.
-    * **Sub-milestone 1.4:** Review and refinement of all 22 card concept descriptions.
-
-2.  **Backend Code Outline (Node.js/Express.js):**
-    * **Sub-milestone 2.1:** Setup of the Node.js/Express.js project and basic server structure.
-    * **Sub-milestone 2.2:** LNURL Pay integration using the provided LNURL string.
-    * **Sub-milestone 2.3:** Implementation of the 21 sats payment processing and 7 sats jackpot allocation logic.
-    * **Sub-milestone 2.4:** Outline of the API endpoint for generating LNURL invoices.
-    * **Sub-milestone 2.5:** Outline of the API endpoint for jackpot claims.
-
-3.  **Frontend Structure (HTML/CSS):**
-    * **Sub-milestone 3.1:** Basic HTML structure for the fortune-telling machine interface.
-    * **Sub-milestone 3.2:** CSS styling for the carnival theme and card display.
-    * **Sub-milestone 3.3:** Layout for the payment section and jackpot claim.
-    * **Sub-milestone 3.4:** Layout for the card display and fortune text.
-    * **Sub-milestone 3.5:** Basic JavaScript structure to handle user interaction.
-
-4.  **Fortune Ideas:**
-    * **Sub-milestone 4.1:** Fortune ideas for the first 7 Major Arcana cards.
-    * **Sub-milestone 4.2:** Fortune ideas for the next 8 Major Arc-ana cards.
-    * **Sub-milestone 4.3:** Fortune ideas for the final 7 Major Arcana cards.
-    * **Sub-milestone 4.4:** Review and refinement of all 22 card fortune ideas.
-
-5.  **Fortune Ideas:**
-    * **Sub-milestone 5.1:** For each combination of possible hands a short and consise fortune must be written, each involving a bitcoin theme. 
-
-## Current Progress
-
-* **Card Concept Descriptions:**
-    * Sub-milestone 1.1: Completed.
-    * Sub-milestone 1.2: Completed.
-    * Sub-milestone 1.3: In Progress.
-    * Sub-milestone 1.4: Pending.
-* **Card Designs:**
-    * Designs for cards 00 through 13 are roughly complete.
-    * The design for card 21 is also roughly complete.
-    * Designs for cards 14-20 are still pending.
-    * All cards require transparency and resizing for web use.
+*   [Overview](#overview)
+*   [Features](#features)
+    *   [Backend](#backend)
+    *   [Frontend](#frontend)
+*   [How it Works (User Flow)](#how-it-works-user-flow)
+*   [Tech Stack](#tech-stack)
+*   [Getting Started (on Replit)](#getting-started-on-replit)
+*   [Status & Roadmap](#status--roadmap)
+    *   [Known Issues](#known-issues)
+    *   [Potential Next Steps](#potential-next-steps)
+*   [Appendix: Bitcoin Tarot Card Concepts](#appendix-bitcoin-tarot-card-concepts)
 
 ---
 
-This plan will be updated as the project progresses.
+## Overview
 
-# BTC Tarot - Card Concepts
-
-## Introduction
-
-This project aims to create a unique Tarot card experience, blending classic medieval aesthetics with a modern dark graphic novel style and incorporating Bitcoin and Lightning Network elements. Below are the concept descriptions for each of the 22 Major Arcana cards.
+Madame Satoshi's is an interactive, web-based simulation of a vintage fortune-telling automaton. Users pay a small fee (21 sats) via the Lightning Network (using LNbits) to receive a three-card Major Arcana Tarot reading with a Bitcoin/crypto-themed fortune. The app features a shared jackpot pool funded by contributions from each play. Users can accumulate winnings from certain card combinations into a personal, persistent balance, which they can claim by providing a Lightning invoice.
 
 ---
 
-# Card Concepts
+## Features
+
+### Backend (Node.js / Express / WebSockets / Replit DB) <a name="backend"></a>
+
+*   **Web Server:** Serves static frontend files (`index.html`, `style.css`, `script.js`, images).
+*   **LNbits Integration:**
+    *   Connects to a configured LNbits instance (URL and Invoice/Read Key via Replit Secrets).
+    *   Creates 21-sat invoices (`/api/create-invoice`) for users to pay.
+    *   Checks the payment status of invoices (`/api/check-invoice/:payment_hash`).
+    *   Decodes user-provided invoices during claims (`/api/claim-payout`) to verify amount.
+    *   Pays out winnings by fulfilling the user's provided invoice (`/api/claim-payout`).
+*   **Replit Database Persistence:**
+    *   **Jackpot Pool:** Stores the shared `currentJackpotPool` value. Loaded on server start and updated (contribution added, wins subtracted) on each draw.
+    *   **User Balances:** Stores individual `withdrawableBalance` for each user, keyed by a unique `sessionId`. Balances persist across browser refreshes for that session.
+*   **Session Management:**
+    *   Generates a unique `sessionId` for new visitors (`/api/session`) stored in the browser's `localStorage`.
+    *   Retrieves user-specific balance from DB based on `sessionId` (`/api/balance/:sessionId`).
+*   **Tarot & Fortune Logic (`/api/draw`):**
+    *   Requires a valid `sessionId`.
+    *   Adds the `JACKPOT_CONTRIBUTION` (16 sats) to the Jackpot Pool in DB.
+    *   Draws 3 unique Major Arcana cards (from a 22-card deck).
+    *   Calculates fortune text and potential `sats_won` based on tiered winning combinations (Jackpot, Major Win, Minor Win) and the current pool value (payouts capped at available pool).
+    *   If `sats_won > 0`:
+        *   Subtracts `sats_won` from the Jackpot Pool in DB.
+        *   Adds `sats_won` to the user's specific balance in DB using their `sessionId`.
+    *   Returns card data, fortune text, `sats_won_this_round`, the user's *new* total `user_balance`, and the final `current_jackpot` pool amount to the frontend.
+*   **WebSocket Server:**
+    *   Broadcasts the updated `currentJackpotPool` amount (fetched from DB) to all connected clients whenever the pool changes (after contribution and after win deduction).
+    *   Sends the current Jackpot amount to newly connected clients.
+*   **Claim Payout (`/api/claim-payout`):**
+    *   Requires `sessionId` and a user-provided `userInvoice` (Bolt11).
+    *   Retrieves the user's balance from DB.
+    *   Decodes the `userInvoice` via LNbits to verify the amount matches the user's balance exactly.
+    *   If valid, pays the invoice using the LNbits Invoice/Read Key.
+    *   If payment is successful, resets the user's balance to 0 in the DB.
+    *   Returns success/failure status to the frontend.
+
+### Frontend (HTML / CSS / JavaScript) <a name="frontend"></a>
+
+*   **Display:** Renders the automaton cabinet background image with overlayed interactive elements.
+*   **Session Management:** On load, retrieves `sessionId` from `localStorage` or fetches a new one from the backend. Stores the received ID.
+*   **Payment Flow:**
+    *   "Insert 21 Sats" button triggers `/api/create-invoice`.
+    *   Displays a payment modal with QR code (via `qrcode.min.js`) and invoice text.
+    *   Supports click-to-copy for QR code and invoice text, providing visual feedback.
+    *   Polls `/api/check-invoice/:payment_hash` until payment is confirmed or timeout.
+    *   On confirmation, hides modal and triggers `/api/draw`.
+*   **Card/Fortune Display:**
+    *   Receives data from `/api/draw`.
+    *   Displays the 3 drawn card images with a flip animation.
+    *   Displays the received fortune text. Adds a `.fortune-win` class for visual emphasis on winning draws.
+    *   Adds card names to image `title` attribute for hover info.
+*   **Real-time Updates & Info:**
+    *   Establishes WebSocket connection to receive live Jackpot updates.
+    *   Displays current "Jackpot Pool" amount.
+    *   Displays user's current "Withdrawable" balance (fetched on load and updated after draws/claims).
+    *   Displays a static "Key Wins" section showing the Jackpot combo and a prompt to see the info panel.
+*   **Information Panel:**
+    *   Pulsing (ⓘ) icon toggles a scrollable panel containing concise rules, win tier info, and warnings.
+*   **Claim Flow:**
+    *   "Claim Winnings" button enabled when "Withdrawable" balance > 0.
+    *   Opens a claim modal displaying the amount to claim.
+    *   User pastes a Lightning invoice for the exact amount into a textarea.
+    *   "Submit Claim" button triggers `/api/claim-payout`.
+    *   Displays success or error messages in the modal. Resets balance display on success.
+
+---
+
+## How it Works (User Flow)
+
+1.  **Visit:** User loads the page. Frontend gets/stores a unique `sessionId` and fetches the initial balance (usually 0) and Jackpot value. The "Insert 21 Sats" button becomes enabled.
+2.  **Pay:** User clicks "Insert 21 Sats". Frontend requests an invoice from the backend. Backend uses LNbits to create a 21 sat invoice. Frontend displays QR/text and starts polling for payment confirmation.
+3.  **Confirm & Draw:** User pays the invoice. Frontend polling detects payment via the backend check. Frontend requests a draw from the backend (`/api/draw`), sending its `sessionId`.
+4.  **Backend Draw Logic:**
+    *   Adds 16 sats (contribution) to the Jackpot Pool (Replit DB).
+    *   Broadcasts the new Jackpot value via WebSocket.
+    *   Draws 3 cards.
+    *   Calculates fortune and potential `sats_won` based on cards and current Jackpot value.
+    *   If a win occurs:
+        *   Subtracts `sats_won` from Jackpot Pool (Replit DB).
+        *   Broadcasts the *new* Jackpot value via WebSocket.
+        *   Adds `sats_won` to the specific user's balance (Replit DB, using `sessionId`).
+    *   Sends cards, fortune, win amount for *this round*, user's *total* balance, and final Jackpot value back to the frontend.
+5.  **Display:** Frontend receives draw results. It flips the cards, shows the fortune (highlighting wins), updates the user's displayed "Withdrawable" balance, and updates the Jackpot display based on WebSocket messages.
+6.  **Claim (Optional):** If user's balance > 0, they click "Claim Winnings". Frontend shows claim modal with the amount. User generates an invoice for that exact amount in their wallet and pastes it. Frontend sends `sessionId` and the invoice to `/api/claim-payout`.
+7.  **Backend Claim Logic:** Backend verifies balance against DB, decodes invoice via LNbits, checks amount match. If OK, it pays the invoice using the LNbits API and resets the user's balance in DB to 0. Returns success/failure to frontend.
+8.  **Claim Display:** Frontend shows success/error message. On success, the "Withdrawable" balance display updates to 0.
+
+---
+
+## Tech Stack
+
+*   **Backend:** Node.js, Express.js, ws (WebSockets), axios, cors, dotenv, @replit/database, uuid
+*   **Frontend:** HTML, CSS, JavaScript (ES6+), qrcode.min.js
+*   **Platform:** Replit
+*   **Payments:** LNbits
+
+---
+
+## Getting Started (on Replit)
+
+1.  **Fork/Clone:** Get the code onto your Replit account.
+2.  **Secrets:** Configure the following secrets in the Replit "Secrets" tab (Tools -> Secrets):
+    *   `LNBITS_URL`: The full URL of your LNbits instance (e.g., `https://legend.lnbits.com`).
+    *   `LNBITS_INVOICE_KEY`: Your Invoice/Read-only API key from LNbits (used for creating/checking invoices and *paying claims*). Ensure this key has payment capabilities if you want claims to work automatically.
+3.  **Install Dependencies:** Open the "Shell" tab and run `npm install`.
+4.  **Run:** Click the "Run" button at the top or type `npm start` in the Shell tab.
+
+---
+
+## Status & Roadmap
+
+*   ✅ **Core Functionality:** Payment, drawing, fortunes, tiered wins, persistent jackpot/balances (DB), claims via invoice, real-time jackpot updates are implemented.
+*   ✨ **UI/UX Enhancements:** Card flip animation, win/balance visual feedback, dynamic jackpot display, key wins info, info panel added.
+
+### Known Issues
+
+*   Investigating reports of potential withdrawable balance inconsistencies across different browser sessions/windows (e.g., Incognito). The `sessionId` *should* isolate balances, but requires further testing and verification under various conditions.
+
+### Potential Next Steps
+
+*   Resolve any confirmed balance isolation issues definitively.
+*   Implement a distinct, possibly more secure or manual, payout mechanism for the main *Jackpot* win (as opposed to regular tiered wins added to balance). This might involve LNURL-Withdraw or an admin notification.
+*   Add sound effects for immersion.
+*   Consider implementing a "Free Play" or demo mode.
+*   Further visual polish, animations, and responsiveness improvements.
+*   Expand the variety of fortune text messages.
+
+---
+
+## Appendix: Bitcoin Tarot Card Concepts
+
+This project uses custom Bitcoin/Lightning-themed interpretations for the 22 Major Arcana cards.
 
 ### 00. The Fool
-
 **Visual:** An androgynous figure stands at the edge of a precipice, seemingly oblivious to the danger. They wear tattered, dark clothing with subtle circuit board patterns. A small, glowing Bitcoin symbol is attached to their back like a backpack. The background is a swirling vortex of dark colors, with faint lightning bolt patterns.
-
-**Bitcoin/Lightning Theme:** The Fool represents taking risks and embracing the unknown, which can be related to the volatile nature of cryptocurrency.
-
----
+**Bitcoin/Lightning Theme:** Taking risks, embracing the unknown, volatility of crypto.
 
 ### I. The Magician
-
 **Visual:** A figure with intense, glowing eyes stands behind a table covered in arcane symbols and tools. One hand holds a wand that emits a beam of light, while the other points downwards, grounding the energy. The table is adorned with a prominent Lightning Network node symbol.
-
-**Bitcoin/Lightning Theme:** The Magician represents skill, resourcefulness, and the ability to manifest one's desires, which can be linked to the potential of blockchain technology.
-
----
+**Bitcoin/Lightning Theme:** Skill, resourcefulness, manifesting desires, potential of blockchain tech.
 
 ### II. The High Priestess
-
-**Visual:** A mysterious figure sits between two pillars, holding a scroll with encrypted symbols. A veil partially obscures their face, adding to their enigmatic aura. The pillars are etched with binary code and Bitcoin addresses.
-
-**Bitcoin/Lightning Theme:** The High Priestess represents intuition, secrets, and hidden knowledge, which can be associated with the anonymity and privacy aspects of cryptocurrency.
-
----
+**Visual:** A mysterious figure sits between two pillars, holding a scroll with encrypted symbols. A veil partially obscures their face. The pillars are etched with binary code and Bitcoin addresses.
+**Bitcoin/Lightning Theme:** Intuition, secrets, hidden knowledge, anonymity/privacy aspects.
 
 ### III. The Empress
-
 **Visual:** A regal figure sits on a throne, surrounded by lush vegetation and symbols of abundance. They wear a crown adorned with Bitcoin symbols and hold a scepter that emits a warm, golden light.
-
-**Bitcoin/Lightning Theme:** The Empress represents abundance, fertility, and creativity, which can be linked to the potential for wealth generation and innovation in the blockchain space.
-
----
+**Bitcoin/Lightning Theme:** Abundance, fertility, creativity, wealth generation, innovation.
 
 ### IV. The Emperor
-
 **Visual:** A powerful figure sits on a throne, holding a scepter and wearing a crown. They exude authority and control. The throne is made of a dark, metallic material with circuit board patterns and Lightning Network node symbols.
-
-**Bitcoin/Lightning Theme:** The Emperor represents structure, authority, and control, which can be associated with the regulatory aspects of cryptocurrency and the established financial system.
-
----
+**Bitcoin/Lightning Theme:** Structure, authority, control, regulation, established systems.
 
 ### V. The Hierophant
-
 **Visual:** A wise figure sits on a throne, surrounded by two acolytes. They wear elaborate robes with intricate patterns and hold a staff with a Bitcoin symbol at the top.
-
-**Bitcoin/Lightning Theme:** The Hierophant represents tradition, conformity, and established institutions, which can be linked to the traditional financial system's view of cryptocurrency.
-
----
+**Bitcoin/Lightning Theme:** Tradition, conformity, established institutions, legacy finance view of crypto.
 
 ### VI. The Lovers
-
-**Visual:** Two figures stand facing each other, surrounded by a swirling vortex of energy. They are connected by a beam of light that emanates from a Bitcoin symbol in the center.
-
-**Bitcoin/Lightning Theme:** The Lovers represents choices, partnerships, and harmony, which can be associated with the collaboration and community aspects of the blockchain space.
-
----
+**Visual:** Two figures stand facing each other, connected by a beam of light emanating from a Bitcoin symbol between them. Surrounded by swirling energy.
+**Bitcoin/Lightning Theme:** Choices, partnerships, harmony, collaboration, community.
 
 ### VII. The Chariot
-
-**Visual:** A powerful figure stands in a chariot, pulled by two creatures. The chariot is adorned with circuit patterns and Bitcoin symbols. The figure holds a scepter that emits a focused beam of light.
-
-**Bitcoin/Lightning Theme:** The Chariot represents willpower, control, and determination, which can be linked to the drive and ambition within the cryptocurrency space.
-
----
+**Visual:** A powerful figure stands in a chariot pulled by two creatures. Adorned with circuit patterns and Bitcoin symbols. Holds a scepter emitting a focused beam of light.
+**Bitcoin/Lightning Theme:** Willpower, control, determination, drive, ambition in the crypto space.
 
 ### VIII. Strength
-
-**Visual:** A figure gently tames a wild creature. The figure exudes a calm and confident energy. Subtle Lightning Network patterns are woven into their clothing.
-
-**Bitcoin/Lightning Theme:** Strength represents inner power, courage, and resilience, which can be associated with the ability to navigate the volatile cryptocurrency market.
-
----
+**Visual:** A figure gently tames a wild creature, exuding calm confidence. Subtle Lightning Network patterns woven into their clothing.
+**Bitcoin/Lightning Theme:** Inner power, courage, resilience, navigating volatility.
 
 ### IX. The Hermit
-
-**Visual:** A solitary figure stands in a dark, desolate landscape, holding a lantern that emits a faint glow. The lantern's light reveals subtle Bitcoin symbols etched into the surrounding rocks.
-
-**Bitcoin/Lightning Theme:** The Hermit represents introspection, solitude, and the search for inner wisdom, which can be linked to the individualistic and decentralized nature of cryptocurrency.
-
----
+**Visual:** A solitary figure in a dark landscape holds a lantern emitting a faint glow, revealing subtle Bitcoin symbols etched into rocks.
+**Bitcoin/Lightning Theme:** Introspection, solitude, seeking wisdom, individualistic/decentralized nature.
 
 ### X. Wheel of Fortune
-
-**Visual:** A large wheel spins against a backdrop of cosmic energy. The wheel is marked with Bitcoin and Lightning Network symbols, representing the cyclical nature of fortune.
-
-**Bitcoin/Lightning Theme:** The Wheel of Fortune represents change, cycles, and destiny, which can be associated with the fluctuating values and trends in the cryptocurrency market.
-
----
+**Visual:** A large wheel marked with Bitcoin and Lightning Network symbols spins against a cosmic backdrop.
+**Bitcoin/Lightning Theme:** Change, cycles, destiny, fluctuating values, market trends.
 
 ### XI. Justice
-
-**Visual:** A figure holds a sword and scales, symbolizing balance and fairness. The scales are subtly designed with blockchain patterns.
-
-**Bitcoin/Lightning Theme:** Justice represents fairness, truth, and accountability, which can be linked to the transparency and immutability of blockchain technology.
-
----
+**Visual:** A figure holds a sword and scales symbolizing balance and fairness. Scales subtly designed with blockchain patterns.
+**Bitcoin/Lightning Theme:** Fairness, truth, accountability, transparency, immutability.
 
 ### XII. The Hanged Man
-
-**Visual:** A figure hangs upside down, suspended by a rope. They appear calm and serene, suggesting a surrender to fate. Faint Bitcoin symbols are visible in the background.
-
-**Bitcoin/Lightning Theme:** The Hanged Man represents sacrifice, surrender, and a shift in perspective, which can be associated with the willingness to take risks and embrace change in the cryptocurrency space.
-
----
+**Visual:** A figure hangs upside down calmly, suggesting surrender. Faint Bitcoin symbols visible in the background.
+**Bitcoin/Lightning Theme:** Sacrifice, surrender, shifting perspective, risk-taking, embracing change.
 
 ### XIII. Death
-
-**Visual:** A skeletal figure rides a dark horse, representing transformation and change. The figure holds a scythe, but the scene is not menacing. Subtle circuit board patterns are visible on the horse's armor.
-
-**Bitcoin/Lightning Theme:** Death represents transformation, endings, and new beginnings, which can be linked to the disruptive nature of blockchain technology and the constant evolution of the cryptocurrency market.
-
----
+**Visual:** A skeletal figure rides a dark horse, holding a scythe, representing transformation (not menacing). Subtle circuit board patterns on horse's armor.
+**Bitcoin/Lightning Theme:** Transformation, endings, new beginnings, disruptive nature of blockchain, market evolution.
 
 ### XIV. Temperance
-
-**Visual:** A figure mixes two substances in vessels, representing balance and harmony. The vessels glow with a soft, ethereal light, and subtle Lightning Network symbols are visible in the background.
-
-**Bitcoin/Lightning Theme:** Temperance represents balance, moderation, and patience, which can be associated with the need for a measured approach to cryptocurrency investment and development.
-
----
+**Visual:** A figure mixes substances between two glowing vessels, representing balance. Subtle Lightning Network symbols in the background.
+**Bitcoin/Lightning Theme:** Balance, moderation, patience, measured approach to investment/development.
 
 ### XV. The Tower
-
-**Visual:** A tall tower is struck by lightning, crumbling and collapsing. Figures are seen falling from the tower. The tower is constructed from dark, metallic materials, with visible circuit board patterns and glowing Lightning Network nodes.
-
-**Bitcoin/Lightning Theme:** The Tower represents sudden change, upheaval, and the destruction of old structures, which can be linked to the disruptive potential of blockchain technology and the volatility of the cryptocurrency market.
-
----
+**Visual:** A tall tower made of dark metallic material with circuit patterns and LN nodes is struck by lightning, crumbling. Figures fall.
+**Bitcoin/Lightning Theme:** Sudden change, upheaval, destruction of old structures, disruptive potential, volatility. (*Note: Original description had this as XV, traditionally it's XVI. Adjusted numbering based on standard Tarot.*) **Re-checking... Ah, the *input* had Tower as XV. Let's keep the user's numbering for consistency with their project, even if non-standard.**
 
 ### XVI. The Star
-
-**Visual:** A figure kneels by a pool of water, pouring out liquid from two vessels. Stars shine brightly in the dark sky. The figure's clothing incorporates subtle Lightning Network patterns, and the stars in the sky are arranged in patterns resembling Bitcoin network nodes.
-
-**Bitcoin/Lightning Theme:** The Star represents hope, inspiration, and renewal, which can be associated with the optimism and potential of the blockchain space.
-
----
+**Visual:** A figure kneels by water, pouring from two vessels under stars. Clothing has subtle LN patterns. Stars resemble Bitcoin network nodes.
+**Bitcoin/Lightning Theme:** Hope, inspiration, renewal, optimism, potential of blockchain. (*User's numbering*)
 
 ### XVII. The Moon
-
-**Visual:** A dark, mysterious landscape with a large moon in the sky. Two towers stand in the distance, and a path leads into the darkness. The moon's light reveals subtle Bitcoin symbols hidden in the shadows.
-
-**Bitcoin/Lightning Theme:** The Moon represents intuition, fear, and the subconscious, which can be linked to the uncertainty and hidden potential of the cryptocurrency market.
-
----
+**Visual:** A dark, mysterious landscape with a large moon, two towers, and a path. Moon reveals subtle Bitcoin symbols in shadows.
+**Bitcoin/Lightning Theme:** Intuition, fear, subconscious, uncertainty, hidden potential. (*User's numbering*)
 
 ### XVIII. The Sun
-
-**Visual:** A bright, radiant sun shines down on a joyful scene. Figures dance and celebrate in a lush, vibrant landscape. The sun itself is depicted as a large, glowing Bitcoin symbol, radiating light and energy.
-
-**Bitcoin/Lightning Theme:** The Sun represents joy, success, and vitality, which can be associated with the potential for wealth generation and positive impact in the blockchain space.
-
----
+**Visual:** A bright, radiant sun (depicted as a glowing Bitcoin symbol) shines on a joyful scene.
+**Bitcoin/Lightning Theme:** Joy, success, vitality, wealth generation, positive impact. (*User's numbering*)
 
 ### XIX. Judgment
-
-**Visual:** Figures rise from their graves, summoned by a trumpet-blowing angel. The angel's trumpet emits a beam of light that forms a Lightning Network connection in the sky.
-
-**Bitcoin/Lightning Theme:** Judgment represents awakening, rebirth, and transformation, which can be linked to the disruptive and transformative nature of blockchain technology.
-
----
+**Visual:** Figures rise from graves summoned by an angel's trumpet emitting light forming an LN connection.
+**Bitcoin/Lightning Theme:** Awakening, rebirth, transformation, disruptive nature of blockchain. (*User's numbering*)
 
 ### XX. The World
-
-**Visual:** A figure dances within a wreath, surrounded by symbols of the four elements. The wreath is composed of interconnected Lightning Network nodes, forming a global network.
-
-**Bitcoin/Lightning Theme:** The World represents completion, fulfillment, and global connection, which can be associated with the potential for blockchain technology to create a more interconnected and equitable world.
-
----
+**Visual:** A figure dances within a wreath composed of interconnected LN nodes (global network). Surrounded by symbols of elements.
+**Bitcoin/Lightning Theme:** Completion, fulfillment, global connection, potential for interconnected/equitable world. (*User's numbering*)
 
 ### XXI. Ace of Pentacles
-
-**Visual:** A large coin or pentacle is held in a hand, surrounded by lush vegetation and symbols of abundance. The coin is designed to resemble a physical Bitcoin, with intricate details and a glowing center.
-
-**Bitcoin/Lightning Theme:** The Ace of Pentacles represents new beginnings, material wealth, and prosperity, which can be linked to the potential for financial gain and economic empowerment in the cryptocurrency space.
+**Visual:** A hand holds a large coin resembling a physical Bitcoin, glowing center. Surrounded by abundance symbols.
+**Bitcoin/Lightning Theme:** New beginnings, material wealth, prosperity, financial gain, economic empowerment. (*Note: This is often considered a Minor Arcana card, but included here as per the user's list.*)
