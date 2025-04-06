@@ -1,31 +1,91 @@
-<!DOCTYPE html>
+<!-- --- START OF FILE frontend/index.html --- -->
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTC Tarot Fortune Teller</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="fortune-teller">
-        <div class="fortune-teller-machine">
-            <div class="screen">
-                <div id="card-display">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Madame Satoshi's Bitcoin Oracle</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="app-container">
+            <!-- Side Win Displays REMOVED -->
+
+            <div class="cabinet-frame">
+                <img
+                    src="automaton/madam-satoshi-web.webp"
+                    alt="Madame Satoshi Automaton Cabinet"
+                    class="cabinet-background-image"
+                />
+                <div id="card-display"></div>
+                <button id="draw-button" class="pay-button" disabled>
+                    Initializing...
+                </button>
+                <div id="info-trigger" title="How It Works">ⓘ</div>
+
+                <!-- Modified Output Area -->
+                <div class="output-area">
+                    <div id="fortune-display" class="oracle-screen"></div>
+                    <!-- ADDED Key Wins Display -->
+                    <div id="key-wins-display" class="key-wins">
+                        <span class="jackpot-line"
+                            ><strong>JACKPOT:</strong> Sun + World +
+                            Magician!</span
+                        >
+                        <span class="other-wins-line"
+                            >(Other Major/Minor Wins Possible - See ⓘ)</span
+                        >
                     </div>
-                <div id="fortune-text">
+                    <div id="balance-info" class="balance-area">
+                        Withdrawable: 0 sats
                     </div>
-            </div>
-            <div class="payment-section">
-                <button id="play-button">Play (21 sats)</button>
-                <div id="payment-status"></div>
-                <div id="jackpot-claim" style="display: none;">
-                    <input type="text" id="invoice-input" placeholder="Lightning Invoice or Address">
-                    <button id="claim-button">Claim Jackpot</button>
-                    <div id="claim-status"></div>
+                    <div id="jackpot-info" class="jackpot-area"></div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+
+                <button id="claim-button" class="withdraw-btn" disabled>
+                    Claim Winnings
+                </button>
+
+                <!-- Concise Instructions Area (Content unchanged, still ul) -->
+                <div id="instructions-area" class="instructions">
+                    <h3>How It Works</h3>
+                    <ul>
+                        <li>Pay 21 sats via Lightning to play.</li>
+                        <li>~80% (16 sats) funds the Jackpot Pool.</li>
+                        <li>3 cards are drawn, revealing your fortune.</li>
+                        <li>Wins add to your 'Withdrawable' balance below.</li>
+                        <li>
+                            <strong>WIN TIERS</strong> (Pool Permitting):<br />
+                             - <strong>JACKPOT!</strong> (Sun+World+Magician): Wins ENTIRE pool!<br />
+                             - Major Win (See side panel): Wins ~35% pool (min 75 sats).<br />
+                             - Minor Win (Other combos): Wins ~15% pool (min 21 sats).
+                        </li>
+                         <li>
+                            <strong style="color: #ffcc66">WARNING:</strong> Jackpot is LIVE & shared! Amount can change instantly. Payouts capped by available pool.
+                        </li>
+                        <li>
+                            <strong>CLAIM:</strong> Click 'Claim Winnings' (if balance > 0), then paste an invoice from *your* wallet matching the exact amount.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Payment Modal (Unchanged) -->
+                <div id="payment-modal" class="modal-overlay" style="display: none">
+                    <div class="modal-content"> <button id="modal-close-button" class="modal-close"> × </button> <h2>Pay 21 Sats via Lightning</h2> <p> Scan QR or tap/click <strong style="cursor: help" title="Click QR code image">QR code</strong> / <strong style="cursor: help" title="Click invoice text below cards">invoice text</strong> to copy. </p> <div id="qrcode-container" title="Click QR Code to copy invoice"> <canvas id="qrcode-canvas"></canvas> </div> <p id="payment-status">Waiting for payment...</p> <p><small>(Invoice expires in ~5 minutes)</small></p> </div>
+                </div>
+
+                <!-- Claim Payout Modal (Unchanged) -->
+                <div id="claim-modal" class="modal-overlay" style="display: none">
+                    <div class="modal-content"> <button id="claim-modal-close-button" class="modal-close"> × </button> <h2>Claim Your Winnings</h2> <p id="claim-instructions"> You have <strong id="claim-amount">0</strong> sats to claim. <br />Please generate and paste a Lightning invoice for exactly this amount from your wallet below: </p> <textarea id="claim-invoice-input" class="invoice-input" rows="4" placeholder="Paste your Lightning invoice (lnbc...) here"></textarea> <button id="submit-claim-button" class="submit-claim-btn"> Submit Claim </button> <p id="claim-status" class="claim-status-area"></p> <p> <small >Ensure the invoice amount matches exactly.</small> </p> </div>
+                </div>
+
+            </div> <!-- End cabinet-frame -->
+
+             <!-- Side Win Displays REMOVED -->
+
+        </div> <!-- End app-container -->
+        <script src="https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
+<!-- --- END OF FILE frontend/index.html --- -->
